@@ -62,8 +62,6 @@
 
 	       alert(photo);
 
-	         
-
                // the file is the first element in the files property
                var file = (photo.files) ? photo.files[0] : "recorded.wav";
 
@@ -84,6 +82,7 @@
                obj.src = src + '?v=' + date.getTime();
 
 	       console.log(obj.src);
+
                return false;
             }
 
@@ -92,29 +91,14 @@
     </head>
     <body>
 
-
-        <div id="controls" style="">
-  
-            <audio controls="controls">
-                 <source id="myaudio" src="recorded.wav" type="audio/wav" />
-                 Your browser does not support the audio tag.
-           </audio>
-
-           <button type="button" onclick='alert("hi"); reloadAudio("myaudio"); upload();'>Click Me!</button>
+      <div id="top" style="">
 
 
-           <form action="/" method="post" onsubmit="return upload();">
-               <fieldset>
-                  <legend>Upload audio file ...</legend>
-                  <input type="file" name="photo" id="photo">
-                  <input type="submit" value="Upload">
-               </fieldset>
-           </form>
+	<div id="top-title" style="float:left; padding-left:20%;"> (1)
+        </div>
 
+        <div id="wrapper" style="padding-top:10px; height:210px; width:340px; background:blue; border:1px solid black; width:50%; margin:0px auto;"> 
 
-        </div>  <!-- controls --> 
-
-        <div id="wrapper" style="padding-top:10px; height:210px; width:340px; background:blue; border:1px solid black;"> 
 
 
         <!-- SWFObject's dynamic embed method replaces this alternative HTML content with Flash content when enough 
@@ -135,6 +119,35 @@
 	   	
 
         </div>  <!-- wrapper -->
+
+      </div> <!-- top -->
+
+	<hr/>
+
+        <div id="controls" style="">
+  
+	   (2)
+
+            <audio controls="controls">
+                 <source id="myaudio" src="recorded.wav" type="audio/wav" />
+                 Your browser does not support the audio tag.
+           </audio>
+
+           <button type="button" onclick='reloadAudio("myaudio"); upload();'>Refresh</button>
+
+
+           <form action="/" method="post" onsubmit="return upload();">
+               <fieldset>
+                  <legend>Upload audio file ...</legend>
+                  <input type="file" name="photo" id="photo">
+                  <input type="submit" value="Upload">
+               </fieldset>
+           </form>
+
+
+        </div>  <!-- controls --> 
+
+
 
        	<noscript>
             <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="320" height="200" id="TestRecorder">
